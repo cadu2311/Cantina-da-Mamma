@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantina da Mamma | Tradição Italiana no Jardim Botânico – Curitiba</title>
+    <meta name="description" content="Massas artesanais, receitas de família e almoço tradicional italiano no Jardim Botânico, Curitiba. Peça direto pelo WhatsApp sem taxas!">
+    
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        olive: {
+                            DEFAULT: '#1E352F',
+                            dark: '#142420',
+                            light: '#2B4A42',
+                        },
+                        terracotta: {
+                            DEFAULT: '#B83A2D',
+                            dark: '#962D22',
+                            light: '#D14B3D',
+                        },
+                        cream: {
+                            DEFAULT: '#FAF6F0',
+                            dark: '#F0E9DE',
+                            card: '#FFFFFF',
+                        },
+                        gold: {
+                            DEFAULT: '#D4A373',
+                            light: '#E6C29F',
+                            dark: '#B58352',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 30px -5px rgba(30, 53, 47, 0.08)',
+                        'card': '0 4px 20px -2px rgba(30, 53, 47, 0.06)',
+                        'float': '0 15px 35px -5px rgba(184, 58, 45, 0.35)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF6F0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4A373;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1E352F;
+        }
+
+        /* Hide scrollbar for category pills on mobile */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Subtle Italian linen texture pattern */
+        .bg-linen {
+            background-color: #FAF6F0;
+            background-image: radial-gradient(#D4A37322 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-up {
+            animation: fadeUp 0.5s ease-out forwards;
+        }
+
+        @keyframes pulseBadge {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        .badge-pop {
+            animation: pulseBadge 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-linen text-olive font-sans antialiased selection:bg-terracotta selection:text-white">
+
+    <!-- Top Info Bar (Status & Location) -->
+    <div class="bg-olive-dark text-cream/90 text-xs py-2 px-4 border-b border-gold/20">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+                <span class="inline-flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span id="store-status-text" class="font-medium">Seg a Sex até 17h • Sáb até 16h</span>
+            </div>
+            <div class="hidden sm:flex items-center gap-4 text-cream/80">
+                <span class="flex items-center gap-1.5">
+                    <!-- Map Pin Icon -->
+                    <svg class="w-3.5 h-3.5 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                    Av. Prefeito Omar Sabbag, 440 – Jardim Botânico, Curitiba
+                </span>
+                <span class="text-gold/50">|</span>
+                <a href="tel:4132628556" class="hover:text-gold transition-colors font-medium">(41) 3262-8556</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Navigation Header -->
+    <header class="sticky top-0 z-40 bg-cream/95 backdrop-blur-md border-b border-gold/25 shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Brand Logo -->
+                <a href="#inicio" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-2xl bg-olive flex items-center justify-center text-gold shadow-md group-hover:bg-terracotta transition-colors duration-300">
+                        <!-- Custom Italian Pasta / Fork Emblem SVG -->
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 14h18"/>
+                            <path d="M4 14c0 4.4 3.6 7 8 7s8-2.6 8-7"/>
+                            <path d="M7 14c0-2.5 2-4 5-4s5 1.5 5 4"/>
+                            <path d="M9 10c0-1.5 1.3-2.5 3-2.5s3 1 3 2.5"/>
+                            <path d="M12 3v4.5"/>
+                            <path d="M9.5 4.5L12 7l2.5-2.5"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-olive leading-none">Cantina da Mamma</span>
+                        </div>
+                        <p class="text-[11px] uppercase tracking-[0.18em] text-terracotta font-semibold mt-1">Jardim Botânico • Curitiba</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#inicio" class="text-sm font-semibold text-olive/80 hover:text-terracotta transition-colors">Início</a>
+                    <a href="#cardapio" class="text-sm font-semibold text-olive/80 hover:text-terracotta transition-colors">Cardápio Digital</a>
+                    <a href="#sobre" class="text-sm font-semibold text-olive/80 hover:text-terracotta transition-colors">Tradição & Sabor</a>
+                    <a href="#localizacao" class="text-sm font-semibold text-olive/80 hover:text-terracotta transition-colors">Localização</a>
+                </nav>
+
+                <!-- Right Actions: Cart Button & Mobile Menu -->
+                <div class="flex items-center gap-2.5">
+                    <button onclick="toggleCart()" aria-label="Abrir sacola de pedidos" class="relative flex items-center gap-2.5 bg-olive hover:bg-olive-light text-cream px-4 py-2.5 rounded-2xl font-semibold text-sm shadow-md transition-all active:scale-95">
+                        <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/>
+                        </svg>
+                        <span class="hidden sm:inline">Meu Pedido</span>
+                        <span id="header-cart-count" class="bg-terracotta text-white text-xs font-bold px-2 py-0.5 rounded-full min-w-[22px] text-center">0</span>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button onclick="toggleMobileMenu()" aria-label="Abrir menu" class="md:hidden p-2.5 rounded-2xl border border-gold/30 text-olive hover:bg-cream-dark transition-colors">
+                        <svg id="mobile-menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-gold/20 px-4 py-4 space-y-2 shadow-lg">
+            <a href="#inicio" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-olive hover:bg-cream-dark">Início</a>
+            <a href="#cardapio" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-olive hover:bg-cream-dark">Cardápio Digital</a>
+            <a href="#sobre" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-olive hover:bg-cream-dark">Tradição & Sabor</a>
+            <a href="#localizacao" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-olive hover:bg-cream-dark">Localização & Horários</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative overflow-hidden bg-olive text-cream pt-12 pb-20 lg:py-24">
+        <!-- Decorative Background Elements -->
+        <div class="absolute inset-0 opacity-15 pointer-events-none">
+            <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-gold blur-3xl"></div>
+            <div class="absolute -bottom-32 -left-24 w-96 h-96 rounded-full bg-terracotta blur-3xl"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <!-- Left Copy -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-olive-light/80 border border-gold/30 text-gold text-xs font-semibold tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-terracotta"></span>
+                        Receitas de Família em Curitiba
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.12] text-cream">
+                        O verdadeiro sabor da <span class="text-gold italic font-semibold">massa artesanal</span> feita hoje.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-cream/85 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Na <strong>Cantina da Mamma</strong>, cada prato é preparado diariamente com ingredientes selecionados, molhos encorpados de cozimento lento e o carinho de um legítimo almoço italiano no coração do Jardim Botânico.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#cardapio" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-terracotta hover:bg-terracotta-light text-white font-bold px-7 py-4 rounded-2xl shadow-float transition-all active:scale-95 text-base">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+                            </svg>
+                            Ver Cardápio Digital
+                        </a>
+
+                        <a href="https://wa.me/554132628556?text=Ol%C3%A1%2C%20Cantina%20da%20Mamma!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-cream/10 hover:bg-cream/20 border border-gold/40 text-cream font-semibold px-7 py-4 rounded-2xl transition-all active:scale-95 text-base">
+                            <!-- WhatsApp Icon -->
+                            <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+                            </svg>
+                            Pedir pelo WhatsApp
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-gold/20 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <p class="font-serif text-xl sm:text-2xl font-bold text-gold">100%</p>
+                            <p class="text-xs text-cream/75 mt-0.5">Massas Frescas</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-xl sm:text-2xl font-bold text-gold">Direto</p>
+                            <p class="text-xs text-cream/75 mt-0.5">Sem Taxa de App</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-xl sm:text-2xl font-bold text-gold">4.8 ★</p>
+                            <p class="text-xs text-cream/75 mt-0.5">Jardim Botânico</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Showcase Card (Illustrated Culinary Plate + Quick Highlight) -->
+                <div class="lg:col-span-5">
+                    <div class="relative bg-cream text-olive rounded-3xl p-6 sm:p-8 shadow-2xl border-2 border-gold/40">
+                        <!-- Top Ribbon -->
+                        <div class="flex items-center justify-between mb-5">
+                            <span class="inline-flex items-center gap-1.5 bg-terracotta/10 text-terracotta text-xs font-bold px-3 py-1 rounded-full">
+                                ★ Sugestão da Mamma Hoje
+                            </span>
+                            <span class="text-xs font-semibold text-olive/60">Pronto em ~25 min</span>
+                        </div>
+
+                        <!-- Artistic Dish Visual Frame -->
+                        <div class="relative rounded-2xl overflow-hidden bg-gradient-to-br from-olive via-olive-light to-olive-dark p-6 text-center text-cream mb-5 shadow-inner">
+                            <div class="w-28 h-28 mx-auto rounded-full bg-cream/10 border-2 border-gold/50 flex items-center justify-center mb-3 shadow-lg">
+                                <!-- Pasta Bowl SVG Illustration -->
+                                <svg class="w-16 h-16 text-gold" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M10 34h44c0 11-9.8 18-22 18S10 45 10 34z" fill="#D4A373" fill-opacity="0.2"/>
+                                    <path d="M16 34c2-6 8-10 16-10s14 4 16 10"/>
+                                    <path d="M21 34c2-4 6-6 11-6s9 2 11 6"/>
+                                    <circle cx="27" cy="27" r="2.5" fill="#B83A2D" stroke="none"/>
+                                    <circle cx="36" cy="28" r="2.5" fill="#B83A2D" stroke="none"/>
+                                    <path d="M24 14c0 3 2 4 2 7M32 12c0 3 2 4 2 7M40 14c0 3 2 4 2 7" stroke-opacity="0.7"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs uppercase tracking-widest text-gold font-semibold">Receita Original</span>
+                            <h3 class="font-serif text-2xl font-bold mt-1">Talharim à Bolonhesa da Nonna</h3>
+                        </div>
+
+                        <p class="text-sm text-olive/80 leading-relaxed mb-5">
+                            Massa fresca cortada na casa, envolvida no nosso tradicional ragu de carne cozido lentamente por 4 horas com tomates maduros e ervas frescas. Acompanha queijo parmesão ralado na hora.
+                        </p>
+
+                        <div class="flex items-center justify-between pt-4 border-t border-olive/10">
+                            <div>
+                                <span class="text-xs text-olive/60 block">Porção individual generosa</span>
+                                <span class="font-serif text-2xl font-bold text-terracotta">R$ 36,90</span>
+                            </div>
+                            <button onclick="addToCartById(1)" class="bg-olive hover:bg-terracotta text-cream font-bold px-5 py-3 rounded-2xl text-sm transition-colors flex items-center gap-2 shadow-md active:scale-95">
+                                <span>+ Adicionar</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Digital Menu Section -->
+    <section id="cardapio" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-10">
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-terracotta">Cardápio Digital</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-olive mt-2">Escolha seu prato favorito</h2>
+            <p class="text-olive/75 mt-3 text-sm sm:text-base">
+                Monte seu pedido abaixo e envie diretamente para o nosso WhatsApp. Rápido, prático e com o preço justo de balcão.
+            </p>
+        </div>
+
+        <!-- Search & Category Filter Bar -->
+        <div class="bg-white rounded-3xl p-4 sm:p-6 shadow-card border border-gold/25 mb-8 space-y-4">
+            
+            <!-- Search Input -->
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <svg class="w-5 h-5 text-olive/45" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+                    </svg>
+                </div>
+                <input 
+                    type="text" 
+                    id="menu-search" 
+                    oninput="handleSearch(this.value)"
+                    placeholder="Buscar prato ou ingrediente (ex: nhoque, bolonhesa, parmegiana, queijo...)" 
+                    class="w-full pl-11 pr-10 py-3.5 bg-cream/70 border border-gold/30 rounded-2xl text-sm text-olive placeholder-olive/50 focus:outline-none focus:ring-2 focus:ring-terracotta/40 focus:border-terracotta transition-all"
+                >
+                <button id="clear-search-btn" onclick="clearSearch()" class="hidden absolute inset-y-0 right-0 pr-4 flex items-center text-olive/50 hover:text-terracotta">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Category Pills -->
+            <div id="category-filters" class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+
+        <!-- Menu Items Grid -->
+        <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Empty Search State -->
+        <div id="empty-menu-state" class="hidden text-center py-16 bg-white rounded-3xl border border-gold/20">
+            <div class="w-16 h-16 mx-auto rounded-full bg-cream flex items-center justify-center text-terracotta mb-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+                </svg>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-olive">Nenhum prato encontrado</h3>
+            <p class="text-sm text-olive/70 mt-1">Tente buscar por outro termo ou limpe os filtros selecionados.</p>
+            <button onclick="resetFilters()" class="mt-4 px-5 py-2.5 bg-olive text-cream rounded-xl text-sm font-semibold hover:bg-terracotta transition-colors">
+                Mostrar todo o cardápio
+            </button>
+        </div>
+    </section>
+
+    <!-- Tradição & Sabor Section -->
+    <section id="sobre" class="py-16 sm:py-24 bg-cream-dark/70 border-y border-gold/25">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Features Cards -->
+                <div class="lg:col-span-6 grid sm:grid-cols-2 gap-5">
+                    <div class="bg-white p-6 rounded-3xl shadow-card border border-gold/20">
+                        <div class="w-12 h-12 rounded-2xl bg-olive/10 text-olive flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-lg font-bold text-olive">Feito Todos os Dias</h3>
+                        <p class="text-sm text-olive/75 mt-2 leading-relaxed">
+                            Nossas massas e nhoques são produzidos artesanalmente todas as manhãs, garantindo textura leve e frescor incomparável.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-3xl shadow-card border border-gold/20">
+                        <div class="w-12 h-12 rounded-2xl bg-terracotta/10 text-terracotta flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-lg font-bold text-olive">Atendimento de Família</h3>
+                        <p class="text-sm text-olive/75 mt-2 leading-relaxed">
+                            Acolhimento caloroso no Jardim Botânico. Aqui cada cliente é recebido pelo nome e servido com fartura.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-3xl shadow-card border border-gold/20">
+                        <div class="w-12 h-12 rounded-2xl bg-gold/20 text-olive flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-lg font-bold text-olive">Molhos de Cozimento Lento</h3>
+                        <p class="text-sm text-olive/75 mt-2 leading-relaxed">
+                            Sem pressa e sem conservantes: nossos molhos ao sugo, bolonhesa e quatro queijos apuram no fogo baixo.
+                        </p>
+                    </div>
+
+                    <div class="bg-olive text-cream p-6 rounded-3xl shadow-card border border-gold/30">
+                        <div class="w-12 h-12 rounded-2xl bg-gold/20 text-gold flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-lg font-bold text-gold">Horário de Almoço</h3>
+                        <p class="text-sm text-cream/85 mt-2 leading-relaxed">
+                            <strong>Seg a Sex:</strong> até as 17h00<br>
+                            <strong>Sábados:</strong> até as 16h00<br>
+                            <span class="text-xs text-gold/80">Domingos: fechado para descanso</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Story Copy -->
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-terracotta">Nossa História & Essência</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-olive leading-tight">
+                        Uma cantina tradicional onde o tempo passa mais devagar e a mesa é sempre farta.
+                    </h2>
+                    <p class="text-olive/80 leading-relaxed">
+                        Localizada na <strong>Av. Prefeito Omar Sabbag, 440</strong>, bem pertinho do Jardim Botânico de Curitiba, a <strong>Cantina da Mamma</strong> nasceu do desejo de preservar as receitas afetivas das cantinas italianas clássicas.
+                    </p>
+                    <p class="text-olive/80 leading-relaxed">
+                        Seja para um almoço executivo rápido durante a semana ou para levar uma travessa de lasanha e rondelli para reunir a família no sábado, preparamos cada pedido na hora com o mesmo cuidado de quem cozinha em casa.
+                    </p>
+
+                    <div class="pt-2 flex flex-wrap gap-4">
+                        <a href="#cardapio" class="inline-flex items-center gap-2 bg-olive hover:bg-terracotta text-cream font-bold px-6 py-3.5 rounded-2xl transition-colors shadow-md">
+                            Explorar Pratos da Casa
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="localizacao" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-3xl shadow-soft border border-gold/25 overflow-hidden">
+            <div class="grid lg:grid-cols-12">
+                
+                <!-- Contact & Address Details -->
+                <div class="lg:col-span-5 p-8 sm:p-10 lg:p-12 flex flex-col justify-between space-y-8">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-[0.2em] text-terracotta">Onde Estamos</span>
+                        <h2 class="font-serif text-3xl font-bold text-olive mt-2">Venha nos visitar ou peça para retirar</h2>
+                        <p class="text-sm text-olive/75 mt-2">Fácil acesso no bairro Jardim Botânico, em Curitiba.</p>
+                    </div>
+
+                    <div class="space-y-5">
+                        <!-- Address -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-terracotta/10 text-terracotta flex items-center justify-center shrink-0 mt-0.5">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-olive text-sm">Endereço</h4>
+                                <p class="text-sm text-olive/80 mt-0.5">Av. Prefeito Omar Sabbag, 440<br>Jardim Botânico, Curitiba – PR</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone / WhatsApp -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-olive/10 text-olive flex items-center justify-center shrink-0 mt-0.5">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-olive text-sm">Telefone & Pedidos</h4>
+                                <a href="tel:4132628556" class="text-sm text-terracotta font-semibold hover:underline mt-0.5 block">(41) 3262-8556</a>
+                            </div>
+                        </div>
+
+                        <!-- Hours -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-gold/25 text-olive flex items-center justify-center shrink-0 mt-0.5">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-olive text-sm">Horário de Funcionamento</h4>
+                                <p class="text-sm text-olive/80 mt-0.5">
+                                    Segunda a Sexta: 11h00 às 17h00<br>
+                                    Sábado: 11h00 às 16h00
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Av.+Prefeito+Omar+Sabbag,+440+-+Jardim+Botanico,+Curitiba+-+PR" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-2 bg-olive hover:bg-olive-light text-cream font-semibold px-5 py-3.5 rounded-2xl text-sm transition-colors shadow-md">
+                            <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"/>
+                            </svg>
+                            Abrir Rota no Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Stylized Map Embed -->
+                <div class="lg:col-span-7 relative min-h-[340px] bg-cream-dark">
+                    <iframe 
+                        title="Mapa de localização Cantina da Mamma - Av. Prefeito Omar Sabbag, 440, Curitiba"
+                        src="https://www.google.com/maps?q=Av.+Prefeito+Omar+Sabbag,+440+-+Jardim+Botanico,+Curitiba+-+PR&output=embed" 
+                        class="w-full h-full min-h-[360px] border-0" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-olive-dark text-cream/80 pt-12 pb-24 sm:pb-12 border-t border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-cream/10">
+                <div class="text-center md:text-left">
+                    <span class="font-serif text-2xl font-bold text-cream">Cantina da Mamma</span>
+                    <p class="text-xs text-cream/65 mt-1">Av. Prefeito Omar Sabbag, 440 – Jardim Botânico, Curitiba – PR • Tel: (41) 3262-8556</p>
+                </div>
+                <div class="flex items-center gap-6 text-sm font-medium">
+                    <a href="#inicio" class="hover:text-gold transition-colors">Início</a>
+                    <a href="#cardapio" class="hover:text-gold transition-colors">Cardápio</a>
+                    <a href="#sobre" class="hover:text-gold transition-colors">Sobre</a>
+                    <a href="#localizacao" class="hover:text-gold transition-colors">Localização</a>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream/55">
+                <p>© 2026 Cantina da Mamma. Todos os direitos reservados.</p>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cream/5 border border-gold/20 text-gold/90">
+                    ✨ Modelo demonstrativo desenvolvido especialmente para Cantina da Mamma
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Mobile Cart Bar (Appears when cart has items) -->
+    <div id="mobile-floating-cart" class="fixed bottom-4 inset-x-4 z-30 md:hidden hidden transition-all duration-300">
+        <button onclick="toggleCart()" class="w-full bg-terracotta text-white px-5 py-4 rounded-2xl shadow-float flex items-center justify-between font-bold">
+            <div class="flex items-center gap-3">
+                <span id="floating-cart-count" class="bg-white text-terracotta text-xs font-extrabold w-7 h-7 rounded-full flex items-center justify-center">0</span>
+                <span class="text-sm">Ver meu pedido</span>
+            </div>
+            <span id="floating-cart-total" class="text-base font-extrabold">R$ 0,00</span>
+        </button>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast-notification" class="fixed top-24 right-4 z-50 transform translate-x-full opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-olive text-cream px-4 py-3 rounded-2xl shadow-xl border border-gold/40 flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold">✓</span>
+            <div>
+                <p id="toast-title" class="text-sm font-bold">Item adicionado!</p>
+                <p id="toast-subtitle" class="text-xs text-cream/75">Prato incluído na sua sacola.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Slide-Over Cart Drawer -->
+    <div id="cart-drawer-overlay" class="fixed inset-0 z-50 hidden">
+        <!-- Backdrop -->
+        <div onclick="toggleCart()" class="fixed inset-0 bg-olive-dark/60 backdrop-blur-sm transition-opacity"></div>
+
+        <!-- Drawer Panel -->
+        <aside class="fixed inset-y-0 right-0 max-w-full w-full sm:w-[460px] bg-cream shadow-2xl flex flex-col border-l border-gold/30 z-10">
+            
+            <!-- Drawer Header -->
+            <div class="px-6 py-5 bg-olive text-cream flex items-center justify-between border-b border-gold/25">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl bg-gold/20 text-gold flex items-center justify-center">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-xl font-bold leading-none">Seu Pedido</h3>
+                        <p class="text-xs text-gold mt-1">Cantina da Mamma • Direto sem taxas</p>
+                    </div>
+                </div>
+                <button onclick="toggleCart()" aria-label="Fechar carrinho" class="p-2 rounded-xl text-cream/70 hover:text-white hover:bg-white/10 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Drawer Scrollable Body -->
+            <div class="flex-1 overflow-y-auto p-6 space-y-6">
+                
+                <!-- Empty Cart View -->
+                <div id="empty-cart-view" class="text-center py-12 space-y-4">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-cream-dark flex items-center justify-center text-olive/40">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-xl font-bold text-olive">Sua sacola está vazia</h4>
+                        <p class="text-sm text-olive/65 mt-1 max-w-xs mx-auto">Adicione nossas massas artesanais, executivos ou porções do cardápio para montar seu pedido.</p>
+                    </div>
+                    <button onclick="toggleCart()" class="inline-flex items-center gap-2 bg-olive text-cream px-5 py-3 rounded-2xl text-sm font-semibold hover:bg-terracotta transition-colors">
+                        Ver Cardápio
+                    </button>
+                </div>
+
+                <!-- Populated Cart Content -->
+                <div id="populated-cart-view" class="hidden space-y-6">
+                    
+                    <!-- Cart Items List -->
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold uppercase tracking-wider text-olive/60">Itens Selecionados</span>
+                            <button onclick="clearCart()" class="text-xs font-semibold text-terracotta hover:underline">Limpar tudo</button>
+                        </div>
+                        <div id="cart-items-list" class="space-y-3">
+                            <!-- Populated via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Delivery / Pickup Mode -->
+                    <div class="bg-white p-4 rounded-2xl border border-gold/25 space-y-3">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-olive">Como deseja receber?</label>
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <button type="button" id="mode-pickup" onclick="setOrderMode('pickup')" class="p-3 rounded-xl border-2 border-olive bg-olive/5 text-left transition-all">
+                                <span class="block text-xs font-bold text-olive">Retirada no Balcão</span>
+                                <span class="block text-[11px] text-olive/65 mt-0.5">Jardim Botânico • Grátis</span>
+                            </button>
+                            <button type="button" id="mode-delivery" onclick="setOrderMode('delivery')" class="p-3 rounded-xl border-2 border-gold/25 bg-white text-left transition-all">
+                                <span class="block text-xs font-bold text-olive">Entrega (Delivery)</span>
+                                <span class="block text-[11px] text-olive/65 mt-0.5">Consultar taxa região</span>
+                            </button>
+                        </div>
+
+                        <!-- Conditional Delivery Address Input -->
+                        <div id="delivery-address-box" class="hidden pt-2">
+                            <label for="customer-address" class="block text-xs font-semibold text-olive mb-1">Endereço completo para entrega *</label>
+                            <input type="text" id="customer-address" placeholder="Rua, número, complemento e bairro..." class="w-full px-3.5 py-2.5 rounded-xl bg-cream/70 border border-gold/30 text-sm text-olive focus:outline-none focus:border-terracotta">
+                        </div>
+                    </div>
+
+                    <!-- Customer Name & Payment Method -->
+                    <div class="bg-white p-4 rounded-2xl border border-gold/25 space-y-4">
+                        <div>
+                            <label for="customer-name" class="block text-xs font-bold uppercase tracking-wider text-olive mb-1.5">Seu Nome</label>
+                            <input type="text" id="customer-name" placeholder="Como podemos chamar você?" class="w-full px-3.5 py-2.5 rounded-xl bg-cream/70 border border-gold/30 text-sm text-olive focus:outline-none focus:border-terracotta">
+                        </div>
+
+                        <div>
+                            <label for="payment-method" class="block text-xs font-bold uppercase tracking-wider text-olive mb-1.5">Forma de Pagamento</label>
+                            <select id="payment-method" class="w-full px-3.5 py-2.5 rounded-xl bg-cream/70 border border-gold/30 text-sm text-olive font-medium focus:outline-none focus:border-terracotta">
+                                <option value="PIX">PIX (Chave na entrega / balcão)</option>
+                                <option value="Cartão de Crédito / Débito">Cartão de Crédito ou Débito</option>
+                                <option value="Dinheiro">Dinheiro</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="order-notes" class="block text-xs font-bold uppercase tracking-wider text-olive mb-1.5">Observações (opcional)</label>
+                            <textarea id="order-notes" rows="2" placeholder="Ex: queijo ralado extra, sem cebola, talheres descartáveis..." class="w-full px-3.5 py-2 rounded-xl bg-cream/70 border border-gold/30 text-sm text-olive focus:outline-none focus:border-terracotta resize-none"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Drawer Footer (Totals & WhatsApp Checkout Button) -->
+            <div id="cart-drawer-footer" class="hidden p-6 bg-white border-t border-gold/30 space-y-4">
+                <div class="space-y-1.5">
+                    <div class="flex items-center justify-between text-sm text-olive/70">
+                        <span>Subtotal dos itens</span>
+                        <span id="cart-subtotal">R$ 0,00</span>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-olive/60">
+                        <span>Modalidade</span>
+                        <span id="cart-mode-summary" class="font-semibold text-olive">Retirada no Balcão</span>
+                    </div>
+                    <div class="flex items-center justify-between text-lg font-bold text-olive pt-2 border-t border-olive/10">
+                        <span>Total Estimado</span>
+                        <span id="cart-total" class="font-serif text-2xl text-terracotta">R$ 0,00</span>
+                    </div>
+                </div>
+
+                <button onclick="checkoutWhatsApp()" class="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-4 px-6 rounded-2xl shadow-lg flex items-center justify-center gap-2.5 transition-all active:scale-[0.98] text-base">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+                    </svg>
+                    Finalizar Pedido no WhatsApp
+                </button>
+                <p id="checkout-error-msg" class="hidden text-center text-xs font-semibold text-terracotta">
+                    Por favor, informe o endereço completo para entrega.
+                </p>
+            </div>
+
+        </aside>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // --- 1. Menu Database (Authentic Curitiba Italian Cantina) ---
+        const MENU_ITEMS = [
+            {
+                id: 1,
+                name: "Talharim à Bolonhesa da Nonna",
+                category: "Massas Artesanais",
+                price: 36.90,
+                description: "Massa fresca cortada diariamente na casa, servida com nosso tradicional ragu de carne cozido por 4 horas e parmesão ralado.",
+                tags: ["Mais Pedido", "Artesanal"]
+            },
+            {
+                id: 2,
+                name: "Nhoque de Batata Recheado",
+                category: "Massas Artesanais",
+                price: 42.90,
+                description: "Nhoque macio de batata asterix recheado com muçarela derretida, coberto com molho ao sugo rústico e folhas de manjericão fresco.",
+                tags: ["Artesanal", "Especialidade"]
+            },
+            {
+                id: 3,
+                name: "Rondelli de Presunto e Queijo ao Molho Branco",
+                category: "Massas Artesanais",
+                price: 39.90,
+                description: "Rolinhos de massa fresca recheados com presunto nobre e queijo muçarela, gratinados ao forno com molho bechamel cremoso.",
+                tags: ["Mais Pedido"]
+            },
+            {
+                id: 4,
+                name: "Lasanha Tradicional à Bolonhesa",
+                category: "Massas Artesanais",
+                price: 44.90,
+                description: "Camadas generosas de massa artesanal intercaladas com molho à bolonhesa, presunto, queijo muçarela e molho branco gratinado.",
+                tags: ["Farto", "Clássico"]
+            },
+            {
+                id: 5,
+                name: "Conchiglione Quatro Queijos & Nozes",
+                category: "Molhos Especiais",
+                price: 45.90,
+                description: "Conchas de massa recheadas com ricota temperada, banhadas em molho cremoso de gorgonzola, provolone, parmesão e catupiry.",
+                tags: ["Vegetariano", "Artesanal"]
+            },
+            {
+                id: 6,
+                name: "Espaguete ao Sugo com Almôndegas (Polpettone)",
+                category: "Molhos Especiais",
+                price: 38.90,
+                description: "Espaguete al dente com molho de tomates pelados italianos e suculentas almôndegas temperadas com ervas finas.",
+                tags: ["Receita de Família"]
+            },
+            {
+                id: 7,
+                name: "Fettuccine Alfredo com Tiras de Frango",
+                category: "Molhos Especiais",
+                price: 37.90,
+                description: "Massa longa envolvida em creme de parmesão fresco e manteiga, acompanhada de tiras de peito de frango grelhadas.",
+                tags: ["Cremoso"]
+            },
+            {
+                id: 8,
+                name: "Parmegiana de Filé Mignon (Serve 2 pessoas)",
+                category: "Pratos Executivos",
+                price: 89.90,
+                description: "Dois bifes altos de filé mignon empanados crocantes, cobertos com molho sugo da casa e muito queijo. Acompanha arroz branco e fritas.",
+                tags: ["Serve 2 pessoas", "Mais Pedido"]
+            },
+            {
+                id: 9,
+                name: "Executivo da Mamma: Bife à Parmegiana Individual",
+                category: "Pratos Executivos",
+                price: 39.90,
+                description: "Almoço completo: bife bovino à parmegiana gratinado, acompanhado de arroz soltinho, batatas fritas crocantes e salada verde.",
+                tags: ["Almoço Executivo"]
+            },
+            {
+                id: 10,
+                name: "Frango Grelhado com Espaguete na Manteiga e Sálvia",
+                category: "Pratos Executivos",
+                price: 32.90,
+                description: "Opção leve e saborosa: filé de peito de frango dourado na chapa com espaguete artesanal salteado na manteiga e sálvia.",
+                tags: ["Leve"]
+            },
+            {
+                id: 11,
+                name: "Polenta Frita Crocante com Queijo Colonial",
+                category: "Porções & Entradas",
+                price: 24.90,
+                description: "Porção generosa de polenta sequinha por fora e macia por dentro, finalizada com generosa camada de queijo colonial ralado.",
+                tags: ["Entrada Clássica"]
+            },
+            {
+                id: 12,
+                name: "Bruschetta Tradicional Italiana (4 unid.)",
+                category: "Porções & Entradas",
+                price: 22.90,
+                description: "Fatias de pão italiano tostado no azeite extra virgem, cobertas com tomates frescos temperados, alho, manjericão e parmesão.",
+                tags: ["Entrada"]
+            },
+            {
+                id: 13,
+                name: "Tiramisù Clássico da Casa",
+                category: "Bebidas & Sobremesas",
+                price: 18.90,
+                description: "Sobremesa italiana autêntica com biscoitos champanhe embebidos em café expresso, creme leve de mascarpone e cacau em pó.",
+                tags: ["Sobremesa da Casa"]
+            },
+            {
+                id: 14,
+                name: "Pudim de Leite Condensado da Mamma",
+                category: "Bebidas & Sobremesas",
+                price: 12.90,
+                description: "Fatia generosa de pudim lisinho e cremoso com calda dourada de caramelo.",
+                tags: ["Clássico"]
+            },
+            {
+                id: 15,
+                name: "Suco Natural de Laranja ou Uva Integral (500ml)",
+                category: "Bebidas & Sobremesas",
+                price: 11.90,
+                description: "Suco gelado preparado na hora (laranja) ou suco de uva tinto integral da Serra Gaúcha.",
+                tags: ["Gelado"]
+            },
+            {
+                id: 16,
+                name: "Refrigerante Lata 350ml (Coca-Cola / Guaraná)",
+                category: "Bebidas & Sobremesas",
+                price: 6.90,
+                description: "Lata 350ml bem gelada (tradicional ou zero açúcar).",
+                tags: ["Gelado"]
+            }
+        ];
+
+        const CATEGORIES = [
+            "Todos",
+            "Massas Artesanais",
+            "Molhos Especiais",
+            "Pratos Executivos",
+            "Porções & Entradas",
+            "Bebidas & Sobremesas"
+        ];
+
+        // --- 2. Application State ---
+        let selectedCategory = "Todos";
+        let searchQuery = "";
+        let cart = []; // Array of { item, quantity }
+        let orderMode = "pickup"; // 'pickup' | 'delivery'
+        const WHATSAPP_NUMBER = "554132628556";
+
+        // --- 3. Formatting Helpers ---
+        function formatCurrency(value) {
+            return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        // --- 4. Render Categories & Menu ---
+        function renderCategories() {
+            const container = document.getElementById('category-filters');
+            container.innerHTML = CATEGORIES.map(cat => {
+                const isActive = selectedCategory === cat;
+                return `
+                    <button 
+                        onclick="selectCategory('${cat}')"
+                        class="whitespace-nowrap px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                            isActive 
+                                ? 'bg-olive text-cream shadow-md' 
+                                : 'bg-cream text-olive/80 hover:bg-cream-dark hover:text-olive'
+                        }"
+                    >
+                        ${cat}
+                    </button>
+                `;
+            }).join('');
+        }
+
+        function selectCategory(category) {
+            selectedCategory = category;
+            renderCategories();
+            renderMenu();
+        }
+
+        function handleSearch(value) {
+            searchQuery = value.trim().toLowerCase();
+            const clearBtn = document.getElementById('clear-search-btn');
+            if (searchQuery.length > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+            renderMenu();
+        }
+
+        function clearSearch() {
+            const input = document.getElementById('menu-search');
+            input.value = "";
+            handleSearch("");
+        }
+
+        function resetFilters() {
+            selectedCategory = "Todos";
+            clearSearch();
+            renderCategories();
+            renderMenu();
+        }
+
+        function renderMenu() {
+            const grid = document.getElementById('menu-grid');
+            const emptyState = document.getElementById('empty-menu-state');
+
+            const filtered = MENU_ITEMS.filter(item => {
+                const matchesCategory = selectedCategory === "Todos" || item.category === selectedCategory;
+                const matchesSearch = !searchQuery || 
+                    item.name.toLowerCase().includes(searchQuery) || 
+                    item.description.toLowerCase().includes(searchQuery) ||
+                    item.category.toLowerCase().includes(searchQuery);
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = "";
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            grid.innerHTML = filtered.map(item => {
+                const inCart = cart.find(c => c.item.id === item.id);
+                const qtyBadge = inCart ? `<span class="ml-1.5 bg-gold text-olive-dark text-xs font-extrabold px-2 py-0.5 rounded-full">${inCart.quantity}</span>` : '';
+
+                const tagsHtml = item.tags.map(tag => {
+                    const isHighlight = tag === "Mais Pedido" || tag === "Serve 2 pessoas";
+                    return `<span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full ${
+                        isHighlight 
+                            ? 'bg-terracotta/10 text-terracotta' 
+                            : 'bg-olive/8 text-olive/80'
+                    }">${tag}</span>`;
+                }).join('');
+
+                return `
+                    <article class="bg-white rounded-3xl p-6 shadow-card hover:shadow-soft border border-gold/25 flex flex-col justify-between transition-all duration-300 animate-fade-up group">
+                        <div>
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                                <span class="text-[11px] font-semibold uppercase tracking-wider text-olive/50">${item.category}</span>
+                                <div class="flex flex-wrap gap-1.5">${tagsHtml}</div>
+                            </div>
+
+                            <h3 class="font-serif text-xl font-bold text-olive group-hover:text-terracotta transition-colors leading-snug">
+                                ${item.name}
+                            </h3>
+
+                            <p class="text-sm text-olive/75 mt-2.5 leading-relaxed">
+                                ${item.description}
+                            </p>
+                        </div>
+
+                        <div class="pt-5 mt-5 border-t border-olive/10 flex items-center justify-between gap-3">
+                            <div>
+                                <span class="text-[11px] text-olive/55 block">Valor unitário</span>
+                                <span class="font-serif text-2xl font-bold text-olive">${formatCurrency(item.price)}</span>
+                            </div>
+
+                            <button 
+                                onclick="addToCartById(${item.id})"
+                                class="bg-olive hover:bg-terracotta text-cream font-bold px-4 py-3 rounded-2xl text-sm transition-all flex items-center justify-center shadow-sm active:scale-95"
+                            >
+                                <span>+ Adicionar</span>
+                                ${qtyBadge}
+                            </button>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        // --- 5. Cart Management ---
+        function addToCartById(id) {
+            const item = MENU_ITEMS.find(m => m.id === id);
+            if (!item) return;
+
+            const existing = cart.find(c => c.item.id === id);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ item, quantity: 1 });
+            }
+
+            updateCartUI();
+            renderMenu();
+            showToast(item.name);
+        }
+
+        function updateQuantity(id, delta) {
+            const index = cart.findIndex(c => c.item.id === id);
+            if (index === -1) return;
+
+            cart[index].quantity += delta;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+
+            updateCartUI();
+            renderMenu();
+        }
+
+        function clearCart() {
+            cart = [];
+            updateCartUI();
+            renderMenu();
+        }
+
+        function getCartTotals() {
+            const totalItems = cart.reduce((acc, c) => acc + c.quantity, 0);
+            const subtotal = cart.reduce((acc, c) => acc + (c.item.price * c.quantity), 0);
+            return { totalItems, subtotal };
+        }
+
+        function updateCartUI() {
+            const { totalItems, subtotal } = getCartTotals();
+
+            // Header badge
+            const headerBadge = document.getElementById('header-cart-count');
+            headerBadge.textContent = totalItems;
+            headerBadge.classList.remove('badge-pop');
+            void headerBadge.offsetWidth; // trigger reflow
+            headerBadge.classList.add('badge-pop');
+
+            // Mobile floating bar
+            const mobileBar = document.getElementById('mobile-floating-cart');
+            if (totalItems > 0) {
+                mobileBar.classList.remove('hidden');
+                document.getElementById('floating-cart-count').textContent = totalItems;
+                document.getElementById('floating-cart-total').textContent = formatCurrency(subtotal);
+            } else {
+                mobileBar.classList.add('hidden');
+            }
+
+            // Drawer Views
+            const emptyView = document.getElementById('empty-cart-view');
+            const populatedView = document.getElementById('populated-cart-view');
+            const drawerFooter = document.getElementById('cart-drawer-footer');
+
+            if (cart.length === 0) {
+                emptyView.classList.remove('hidden');
+                populatedView.classList.add('hidden');
+                drawerFooter.classList.add('hidden');
+            } else {
+                emptyView.classList.add('hidden');
+                populatedView.classList.remove('hidden');
+                drawerFooter.classList.remove('hidden');
+
+                // Render items inside drawer
+                const listContainer = document.getElementById('cart-items-list');
+                listContainer.innerHTML = cart.map(({ item, quantity }) => `
+                    <div class="bg-white p-3.5 rounded-2xl border border-gold/25 flex items-center justify-between gap-3">
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-sm text-olive truncate">${item.name}</h4>
+                            <p class="text-xs text-terracotta font-semibold mt-0.5">${formatCurrency(item.price * quantity)}</p>
+                        </div>
+                        <div class="flex items-center gap-2 bg-cream px-2 py-1 rounded-xl border border-gold/20">
+                            <button onclick="updateQuantity(${item.id}, -1)" aria-label="Diminuir quantidade" class="w-7 h-7 rounded-lg bg-white text-olive font-bold hover:bg-terracotta hover:text-white transition-colors flex items-center justify-center shadow-xs">−</button>
+                            <span class="text-sm font-bold text-olive w-5 text-center">${quantity}</span>
+                            <button onclick="updateQuantity(${item.id}, 1)" aria-label="Aumentar quantidade" class="w-7 h-7 rounded-lg bg-white text-olive font-bold hover:bg-olive hover:text-white transition-colors flex items-center justify-center shadow-xs">+</button>
+                        </div>
+                    </div>
+                `).join('');
+
+                document.getElementById('cart-subtotal').textContent = formatCurrency(subtotal);
+                document.getElementById('cart-total').textContent = formatCurrency(subtotal);
+            }
+        }
+
+        // --- 6. Drawer, Modal & Order Mode Controls ---
+        function toggleCart() {
+            const overlay = document.getElementById('cart-drawer-overlay');
+            overlay.classList.toggle('hidden');
+            if (!overlay.classList.contains('hidden')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function setOrderMode(mode) {
+            orderMode = mode;
+            const pickupBtn = document.getElementById('mode-pickup');
+            const deliveryBtn = document.getElementById('mode-delivery');
+            const addressBox = document.getElementById('delivery-address-box');
+            const summaryLabel = document.getElementById('cart-mode-summary');
+            const errorMsg = document.getElementById('checkout-error-msg');
+
+            errorMsg.classList.add('hidden');
+
+            if (mode === 'pickup') {
+                pickupBtn.className = "p-3 rounded-xl border-2 border-olive bg-olive/5 text-left transition-all";
+                deliveryBtn.className = "p-3 rounded-xl border-2 border-gold/25 bg-white text-left transition-all";
+                addressBox.classList.add('hidden');
+                summaryLabel.textContent = "Retirada no Balcão (Jardim Botânico)";
+            } else {
+                deliveryBtn.className = "p-3 rounded-xl border-2 border-olive bg-olive/5 text-left transition-all";
+                pickupBtn.className = "p-3 rounded-xl border-2 border-gold/25 bg-white text-left transition-all";
+                addressBox.classList.remove('hidden');
+                summaryLabel.textContent = "Entrega (Delivery)";
+            }
+        }
+
+        // --- 7. WhatsApp Checkout Generator ---
+        function checkoutWhatsApp() {
+            if (cart.length === 0) return;
+
+            const customerName = document.getElementById('customer-name').value.trim();
+            const paymentMethod = document.getElementById('payment-method').value;
+            const orderNotes = document.getElementById('order-notes').value.trim();
+            const addressInput = document.getElementById('customer-address');
+            const customerAddress = addressInput.value.trim();
+            const errorMsg = document.getElementById('checkout-error-msg');
+
+            if (orderMode === 'delivery' && !customerAddress) {
+                errorMsg.classList.remove('hidden');
+                addressInput.focus();
+                return;
+            }
+            errorMsg.classList.add('hidden');
+
+            const { subtotal } = getCartTotals();
+
+            let message = `*🍝 NOVO PEDIDO - CANTINA DA MAMMA*\n`;
+            message += `----------------------------------\n`;
+            if (customerName) {
+                message += `*Cliente:* ${customerName}\n`;
+            }
+            message += `*Modalidade:* ${orderMode === 'pickup' ? 'Retirada no Balcão (Jardim Botânico)' : 'Entrega (Delivery)'}\n`;
+            if (orderMode === 'delivery') {
+                message += `*Endereço:* ${customerAddress}\n`;
+            }
+            message += `----------------------------------\n`;
+            message += `*ITENS DO PEDIDO:*\n`;
+
+            cart.forEach(({ item, quantity }) => {
+                message += `• ${quantity}x ${item.name} — ${formatCurrency(item.price * quantity)}\n`;
+            });
+
+            message += `----------------------------------\n`;
+            message += `*Subtotal:* ${formatCurrency(subtotal)}\n`;
+            if (orderMode === 'delivery') {
+                message += `_(+ taxa de entrega a confirmar)_\n`;
+            }
+            message += `*Pagamento:* ${paymentMethod}\n`;
+
+            if (orderNotes) {
+                message += `*Observações:* ${orderNotes}\n`;
+            }
+
+            message += `\n_Pedido enviado pelo Cardápio Digital da Cantina da Mamma._`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        // --- 8. Toast Notification ---
+        let toastTimeout;
+        function showToast(itemName) {
+            const toast = document.getElementById('toast-notification');
+            const title = document.getElementById('toast-title');
+            title.textContent = `${itemName}`;
+
+            toast.classList.remove('translate-x-full', 'opacity-0');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('translate-x-full', 'opacity-0');
+            }, 2500);
+        }
+
+        // --- 9. Dynamic Store Hours Indicator (Curitiba Time) ---
+        function updateStoreStatus() {
+            const now = new Date();
+            const day = now.getDay(); // 0 = Sun, 1..5 = Mon..Fri, 6 = Sat
+            const hour = now.getHours();
+            const statusText = document.getElementById('store-status-text');
+
+            let isOpen = false;
+            if (day >= 1 && day <= 5 && hour >= 11 && hour < 17) {
+                isOpen = true;
+            } else if (day === 6 && hour >= 11 && hour < 16) {
+                isOpen = true;
+            }
+
+            if (isOpen) {
+                statusText.innerHTML = `<strong class="text-emerald-300">Aberto agora</strong> • Seg a Sex até 17h | Sáb até 16h`;
+            } else {
+                statusText.innerHTML = `Atendimento: Seg a Sex (11h–17h) • Sáb (11h–16h)`;
+            }
+        }
+
+        // --- Initialize App ---
+        window.addEventListener('DOMContentLoaded', () => {
+            renderCategories();
+            renderMenu();
+            updateStoreStatus();
+        });
+    </script>
+</body>
+</html>
